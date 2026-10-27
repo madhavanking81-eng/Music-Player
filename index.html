@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VYBE | Tamil Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HOME PAGE -->
+    <main id="homePage">
+
+        <header class="topbar">
+            <a href="#" class="logo">VYBE<span>.</span></a>
+
+            <nav>
+                <a href="#homePage" class="nav-link active">Home</a>
+                <a href="#library" class="nav-link">Library</a>
+            </nav>
+
+            <div class="topbar-label">TAMIL MUSIC EXPERIENCE</div>
+        </header>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">YOUR MUSIC. YOUR WORLD.</p>
+
+                <h1>Feel the<br>music<span>.</span></h1>
+
+                <p class="hero-description">
+                    Every song has a story. Open the book and feel every beat.
+                </p>
+
+                <a href="#library" class="primary-button">
+                    EXPLORE SONGS <span>↘</span>
+                </a>
+            </div>
+
+            <div class="hero-art">
+                <div class="hero-circle"></div>
+                <div class="hero-note">♫</div>
+                <div class="hero-text">TAMIL<br><span>VIBES</span></div>
+            </div>
+
+        </section>
+
+        <!-- SONG LIBRARY -->
+        <section class="library" id="library">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR COLLECTION</p>
+                    <h2>Popular <span>Tracks</span></h2>
+                </div>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search your songs..."
+                    aria-label="Search songs"
+                >
+            </div>
+
+            <div class="song-grid" id="songGrid"></div>
+
+            <p class="empty-message" id="emptyMessage" hidden>
+                No songs found. Try another name.
+            </p>
+
+        </section>
+
+        <footer class="footer">
+            <a href="#" class="logo">VYBE<span>.</span></a>
+            <p>MADE FOR THE LOVE OF MUSIC.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- BOOK / PLAYER PAGE -->
+    <section class="book-page" id="bookPage" hidden>
+
+        <header class="player-header">
+            <a href="#" class="logo">VYBE<span>.</span></a>
+
+            <p>YOUR PERSONAL MUSIC ROOM</p>
+
+            <button id="backButton" class="back-button">
+                ← BACK TO HOME
+            </button>
+        </header>
+
+        <!-- 3D BOOK -->
+        <div class="book-scene">
+
+            <div class="music-book" id="musicBook">
+
+                <!-- INSIDE OF BOOK -->
+                <div class="book-inside">
+
+                    <!-- LEFT PAGE -->
+                    <section class="book-left">
+
+                        <p class="eyebrow">NOW PLAYING</p>
+
+                        <div class="inside-art">
+                            <img id="albumArt" src="" alt="Current movie poster">
+                            <div id="fallbackArt">♫</div>
+                        </div>
+
+                        <h2 id="currentSongTitle">Choose a song</h2>
+
+                        <p id="currentArtist">Tamil Cinema</p>
+
+                        <p class="inside-caption">MADE FOR YOUR VYBE.</p>
+
+                    </section>
+
+
+                    <!-- RIGHT PAGE -->
+                    <section class="book-right">
+
+                        <p class="eyebrow">THE MUSIC ROOM</p>
+
+                        <h2>Feel every<br><span>beat.</span></h2>
+
+                        <div class="player-controls">
+
+                            <button id="previousButton" aria-label="Previous song">
+                                |◀
+                            </button>
+
+                            <button id="playButton" class="big-play" aria-label="Play">
+                                ▶
+                            </button>
+
+                            <button id="nextButton" aria-label="Next song">
+                                ▶|
+                            </button>
+
+                        </div>
+
+                        <div class="progress-area">
+
+                            <span id="currentTime">0:00</span>
+
+                            <input
+                                id="progressBar"
+                                type="range"
+                                min="0"
+                                max="100"
+                                value="0"
+                                step="0.1"
+                                aria-label="Song progress"
+                            >
+
+                            <span id="duration">0:00</span>
+
+                        </div>
+
+                        <div class="volume-area">
+                            <span>VOL</span>
+
+                            <input
+                                id="volumeBar"
+                                type="range"
+                                min="0"
+                                max="1"
+                                step="0.01"
+                                value="0.8"
+                                aria-label="Volume"
+                            >
+                        </div>
+
+                        <button class="outline-button" id="playlistToggle">
+                            ☷ PLAYLIST <span id="playlistCount">0</span>
+                        </button>
+
+                        <div id="playlistPanel" hidden>
+                            <div id="playlist" class="playlist"></div>
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- BOOK COVER -->
+                <div class="book-cover" id="bookCover">
+
+                    <div class="cover-design">
+
+                        <p class="cover-small">YOUR PERSONAL MUSIC COLLECTION</p>
+
+                        <div class="cover-symbol">♫</div>
+
+                        <h1>VYBE<span>.</span></h1>
+
+                        <p class="cover-bottom">OPEN THE BOOK. FEEL THE MUSIC.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALL SONGS ALSO APPEAR ON BOOK PAGE -->
+        <section class="book-library">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR COLLECTION</p>
+                    <h2>All <span>Songs</span></h2>
+                </div>
+
+                <input
+                    type="search"
+                    id="bookSearchInput"
+                    placeholder="Search songs..."
+                    aria-label="Search songs on player page"
+                >
+            </div>
+
+            <div class="song-grid" id="bookSongGrid"></div>
+
+        </section>
+
+    </section>
+
+
+    <!-- MINI PLAYER -->
+    <div class="mini-player" id="miniPlayer" hidden>
+
+        <div class="mini-song">
+            <img id="miniArt" src="" alt="">
+
+            <div>
+                <strong id="miniTitle">No song selected</strong>
+                <p id="miniArtist">VYBE Music</p>
+            </div>
+        </div>
+
+        <div class="mini-controls">
+            <button id="miniPrevious" aria-label="Previous song">|◀</button>
+            <button id="miniPlay" aria-label="Play">▶</button>
+            <button id="miniNext" aria-label="Next song">▶|</button>
+        </div>
+
+    </div>
+
+
+    <!-- AUDIO PLAYER -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

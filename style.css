@@ -1,0 +1,1214 @@
+
+/* =========================
+   VYBE MUSIC PLAYER
+   Premium Black & Red Theme
+========================= */
+
+:root {
+    --bg: #090909;
+    --panel: #141414;
+    --panel-light: #1d1d1d;
+    --red: #ed142b;
+    --red-dark: #a90016;
+    --white: #ffffff;
+    --muted: #929292;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 4px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.logo span,
+.hero h1 span,
+.cover-design h1 span {
+    color: var(--red);
+}
+
+.topbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+}
+
+.topbar-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 470px;
+    padding: 75px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 80% 50%,
+            rgba(160, 0, 20, 0.2),
+            transparent 45%
+        ),
+        var(--bg);
+}
+
+.hero-content {
+    max-width: 550px;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 8vw, 105px);
+    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -5px;
+}
+
+.hero-description {
+    max-width: 400px;
+    color: #a5a5a5;
+    font-size: 13px;
+    line-height: 1.9;
+    margin: 25px 0 30px;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 22px;
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.primary-button:hover {
+    background: #ff3045;
+    transform: translateY(-3px);
+}
+
+.primary-button span {
+    font-size: 18px;
+}
+
+/* Hero artwork */
+
+.hero-art {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+}
+
+.hero-circle {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid rgba(237, 20, 43, 0.45);
+    box-shadow:
+        0 0 0 25px rgba(237, 20, 43, 0.035),
+        0 0 0 50px rgba(237, 20, 43, 0.025),
+        0 0 70px rgba(237, 20, 43, 0.15);
+    animation: pulseCircle 4s ease-in-out infinite;
+}
+
+.hero-note {
+    position: absolute;
+    color: var(--red);
+    font-size: 140px;
+    font-weight: 800;
+    animation: floatNote 4s ease-in-out infinite;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 15px;
+    right: -5px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.hero-text span {
+    color: var(--red);
+}
+
+@keyframes pulseCircle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+    }
+}
+
+@keyframes floatNote {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================
+   SONG LIBRARY
+========================= */
+
+.library,
+.book-library {
+    padding: 60px 7% 85px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.section-heading h2 span {
+    color: var(--red);
+}
+
+#searchInput,
+#bookSearchInput {
+    width: 250px;
+    max-width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    background: #121212;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus,
+#bookSearchInput:focus {
+    border-color: var(--red);
+}
+
+#searchInput::placeholder,
+#bookSearchInput::placeholder {
+    color: #777;
+}
+
+/* Song cards grid */
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.song-card {
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--white);
+    overflow: hidden;
+    transition:
+        background 0.3s,
+        border-color 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.song-card:hover {
+    background: #171717;
+    border-color: rgba(237, 20, 43, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.song-card-art {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 5px;
+    background:
+        linear-gradient(135deg, #31050b, #151515);
+}
+
+.song-card-art img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #111;
+    transition: transform 0.5s;
+}
+
+.song-card:hover .song-card-art img {
+    transform: scale(1.04);
+}
+
+.fallback-art {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--red);
+    font-size: 55px;
+    z-index: 0;
+}
+
+.song-card-art img {
+    z-index: 1;
+}
+
+.song-card-art.no-image img {
+    display: none;
+}
+
+.song-card-title {
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.song-card-artist {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.empty-message {
+    color: var(--muted);
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    min-height: 100px;
+    border-top: 1px solid var(--border);
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer .logo {
+    font-size: 24px;
+}
+
+.footer p {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+/* =========================
+   BOOK PAGE
+========================= */
+
+.book-page {
+    min-height: 100vh;
+    padding-bottom: 40px;
+    background:
+        radial-gradient(
+            ellipse at 50% 35%,
+            rgba(100, 0, 10, 0.13),
+            transparent 60%
+        ),
+        #090909;
+}
+
+.player-header {
+    min-height: 85px;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.player-header > p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.back-button {
+    padding: 12px 16px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: white;
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.back-button:hover {
+    border-color: var(--red);
+    background: rgba(237, 20, 43, 0.1);
+}
+
+/* Book scene */
+
+.book-scene {
+    width: 100%;
+    min-height: 580px;
+    padding: 65px 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1800px;
+    overflow: hidden;
+}
+
+.music-book {
+    position: relative;
+    width: min(850px, 90vw);
+    height: 460px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+/* Two inner pages */
+
+.book-inside {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #3d2929;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #eee7dc;
+    color: #151515;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.book-left,
+.book-right {
+    min-width: 0;
+    position: relative;
+    padding: 28px;
+    overflow: hidden;
+}
+
+.book-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5eee3, #d8cbb7);
+    border-right: 2px solid rgba(80, 40, 20, 0.2);
+    text-align: center;
+}
+
+.book-left .eyebrow,
+.book-right .eyebrow {
+    color: #8f101e;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.inside-art {
+    position: relative;
+    width: 155px;
+    height: 185px;
+    flex-shrink: 0;
+    margin: 5px 0 15px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #201517;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.inside-art img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: #111;
+}
+
+.inside-art #fallbackArt {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--red);
+    font-size: 50px;
+}
+
+.inside-art img:not([src=""]) + #fallbackArt {
+    display: none;
+}
+
+.book-left h2 {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.book-left > p:not(.eyebrow):not(.inside-caption) {
+    color: #6b6258;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.inside-caption {
+    margin-top: 15px;
+    color: #8a7b69;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* Right page */
+
+.book-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        linear-gradient(
+            135deg,
+            #f5eee3,
+            #e8dcc9
+        );
+}
+
+.book-right h2 {
+    font-size: clamp(26px, 4vw, 43px);
+    line-height: 1.1;
+    color: #171313;
+    letter-spacing: -1px;
+}
+
+.book-right h2 span {
+    color: #a50d20;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 28px 0 20px;
+}
+
+.player-controls button,
+.mini-controls button {
+    border: none;
+    background: transparent;
+    color: #21191a;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.player-controls button:hover,
+.mini-controls button:hover {
+    color: var(--red);
+    transform: scale(1.1);
+}
+
+.player-controls .big-play {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #a80d20;
+    color: white;
+    font-size: 19px;
+    box-shadow: 0 5px 18px rgba(150, 0, 20, 0.2);
+}
+
+.player-controls .big-play:hover {
+    background: var(--red);
+    color: white;
+}
+
+.progress-area {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr) 35px;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-area span {
+    font-size: 9px;
+    color: #675d55;
+    font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--red);
+    cursor: pointer;
+}
+
+.volume-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 17px;
+}
+
+.volume-area span {
+    color: #675d55;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.volume-area input {
+    max-width: 150px;
+}
+
+.outline-button {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 10px 13px;
+    border: 1px solid rgba(60, 30, 30, 0.3);
+    border-radius: 3px;
+    background: transparent;
+    color: #21191a;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.outline-button:hover {
+    border-color: #a80d20;
+}
+
+.outline-button span {
+    color: #a80d20;
+}
+
+/* 3D cover */
+
+.book-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 1.5s cubic-bezier(0.2, 0.75, 0.25, 1);
+    border: 1px solid #6d151e;
+    border-radius: 4px;
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(237, 20, 43, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #39050c, #12090b 70%, #080808);
+    box-shadow: 8px 15px 35px rgba(0, 0, 0, 0.45);
+    backface-visibility: hidden;
+}
+
+.music-book.is-open .book-cover {
+    transform: rotateY(-165deg);
+}
+
+.cover-design {
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(237, 20, 43, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.cover-small {
+    color: #d0a9ad;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.cover-symbol {
+    margin-top: 25px;
+    color: var(--red);
+    font-size: 85px;
+    text-shadow: 0 0 40px rgba(237, 20, 43, 0.3);
+}
+
+.cover-design h1 {
+    margin-top: 8px;
+    font-size: clamp(48px, 8vw, 85px);
+    font-weight: 800;
+    letter-spacing: -4px;
+}
+
+.cover-bottom {
+    position: absolute;
+    bottom: 30px;
+    color: #d0a9ad;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* Playlist */
+
+#playlistPanel {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.playlist {
+    width: 100%;
+    max-height: 120px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.playlist-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 5px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: transparent;
+    color: #302728;
+    font-size: 10px;
+}
+
+.playlist-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.playlist-item.active {
+    color: #a80d20;
+    border-left: 3px solid #a80d20;
+    padding-left: 8px;
+}
+
+.playlist-item span:last-child {
+    flex-shrink: 0;
+    color: #82736e;
+}
+
+/* Book page song grid */
+
+.book-library {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 7% 80px;
+    border-top: 1px solid var(--border);
+}
+
+.book-library .section-heading h2 {
+    color: white;
+}
+
+#bookSongGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+}
+
+#bookSongGrid .song-card-art {
+    aspect-ratio: 3 / 4;
+}
+
+/* =========================
+   MINI PLAYER
+========================= */
+
+.mini-player {
+    position: fixed;
+    z-index: 20;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(650px, calc(100% - 30px));
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid rgba(237, 20, 43, 0.35);
+    border-radius: 8px;
+    background: rgba(18, 18, 18, 0.96);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.mini-song {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-song img {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    object-fit: contain;
+    background: #222;
+    border-radius: 4px;
+}
+
+.mini-song strong {
+    display: block;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.mini-song p {
+    color: var(--muted);
+    font-size: 9px;
+    margin-top: 4px;
+}
+
+.mini-controls {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.mini-controls button {
+    color: white;
+    font-size: 15px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+    .song-grid,
+    #bookSongGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .hero {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .book-left,
+    .book-right {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 750px) {
+    .topbar {
+        padding: 18px 5%;
+    }
+
+    .topbar-label {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 65px 7%;
+    }
+
+    .hero-art {
+        width: 180px;
+        height: 220px;
+    }
+
+    .hero-circle {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-note {
+        font-size: 95px;
+    }
+
+    .hero-text {
+        right: -10px;
+        font-size: 10px;
+    }
+
+    .song-grid,
+    #bookSongGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .library,
+    .book-library {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .book-scene {
+        min-height: 550px;
+        padding: 45px 15px;
+        perspective: 1400px;
+    }
+
+    .music-book {
+        width: min(700px, 94vw);
+        height: 430px;
+    }
+
+    .book-left,
+    .book-right {
+        padding: 17px;
+    }
+
+    .inside-art {
+        width: 125px;
+        height: 155px;
+    }
+
+    .player-header > p {
+        display: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .topbar {
+        min-height: 70px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .topbar nav {
+        gap: 15px;
+    }
+
+    .hero {
+        padding-top: 55px;
+        padding-bottom: 45px;
+    }
+
+    .hero h1 {
+        font-size: 57px;
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .hero-art {
+        width: 95px;
+        height: 140px;
+    }
+
+    .hero-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-note {
+        font-size: 65px;
+    }
+
+    .hero-text {
+        display: none;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #searchInput,
+    #bookSearchInput {
+        width: 100%;
+    }
+
+    .song-grid,
+    #bookSongGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .song-card {
+        padding: 7px;
+    }
+
+    .song-card-title {
+        font-size: 11px;
+    }
+
+    .song-card-artist {
+        font-size: 9px;
+    }
+
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .player-header {
+        min-height: 75px;
+        padding: 14px 4%;
+    }
+
+    .back-button {
+        padding: 10px;
+        font-size: 9px;
+    }
+
+    .book-scene {
+        min-height: 650px;
+        padding: 35px 12px;
+        align-items: flex-start;
+        perspective: 1200px;
+    }
+
+    .music-book {
+        width: 94vw;
+        height: 570px;
+    }
+
+    .book-inside {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .book-left {
+        border-right: none;
+        border-bottom: 2px solid rgba(80, 40, 20, 0.2);
+        padding: 12px;
+    }
+
+    .book-left .eyebrow {
+        margin-bottom: 5px;
+    }
+
+    .inside-art {
+        width: 90px;
+        height: 110px;
+        margin: 2px 0 8px;
+    }
+
+    .book-left h2 {
+        font-size: 13px;
+    }
+
+    .inside-caption {
+        margin-top: 5px;
+    }
+
+    .book-right {
+        padding: 17px 20px;
+    }
+
+    .book-right h2 {
+        font-size: 29px;
+    }
+
+    .player-controls {
+        margin: 14px 0;
+        gap: 25px;
+    }
+
+    .player-controls .big-play {
+        width: 43px;
+        height: 43px;
+    }
+
+    .volume-area {
+        margin-top: 10px;
+    }
+
+    .outline-button {
+        margin-top: 12px;
+    }
+
+    .playlist {
+        max-height: 70px;
+    }
+
+    .cover-small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .cover-symbol {
+        font-size: 65px;
+    }
+
+    .cover-design h1 {
+        font-size: 55px;
+    }
+
+    .cover-bottom {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .mini-player {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .mini-song img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .mini-song strong {
+        max-width: 125px;
+        font-size: 10px;
+    }
+
+    .mini-controls {
+        gap: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
